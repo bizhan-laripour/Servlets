@@ -98,9 +98,40 @@
         <servlet-class>event_and_listeners.httpSession_event.HLoginController</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>baseLogin</servlet-name>
+        <servlet-class>filters.BaseLoginController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>filterClient</servlet-name>
+        <servlet-class>filters.BaseClient</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>filterIndex</servlet-name>
+        <servlet-class>filters.BaseLogin</servlet-class>
+    </servlet>
+
 <!--    end of servlet area-->
 
 <!--    servlet mapping area-->
+
+
+    <servlet-mapping>
+        <servlet-name>filterIndex</servlet-name>
+        <url-pattern>/filterIndex</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>filterClient</servlet-name>
+        <url-pattern>/filterClient</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>baseLogin</servlet-name>
+        <url-pattern>/baseLogin</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>controller2</servlet-name>
         <url-pattern>/controller2</url-pattern>
@@ -215,5 +246,16 @@
     </listener>
 
 <!--    end of listeners area-->
+
+
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>filters.FilterLogin</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/baseLogin</url-pattern>
+    </filter-mapping>
 
 </web-app>
