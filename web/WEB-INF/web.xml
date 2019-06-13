@@ -78,6 +78,26 @@
         <servlet-class>session_tracking.session.SessionLogin</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>contextLogin</servlet-name>
+        <servlet-class>event_and_listeners.servlet_context_event.ContextLogin</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>hLogin</servlet-name>
+        <servlet-class>event_and_listeners.httpSession_event.HSessionLogin</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>hLogout</servlet-name>
+        <servlet-class>event_and_listeners.httpSession_event.Hlogout</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>hLoginCont</servlet-name>
+        <servlet-class>event_and_listeners.httpSession_event.HLoginController</servlet-class>
+    </servlet>
+
 <!--    end of servlet area-->
 
 <!--    servlet mapping area-->
@@ -147,6 +167,28 @@
         <url-pattern>/sessionIndex</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>contextLogin</servlet-name>
+        <url-pattern>/contextLogin</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>hLogin</servlet-name>
+        <url-pattern>/hLogin</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>hLogout</servlet-name>
+        <url-pattern>/hLogout</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>hLoginCont</servlet-name>
+        <url-pattern>/hLoginCont</url-pattern>
+    </servlet-mapping>
+
+
+
 <!--    end of servlet mapping area-->
 
 <!--context area-->
@@ -161,5 +203,17 @@
     </context-param>
 
 <!--    end of context area-->
+
+
+<!--    listeners area-->
+    <listener>
+        <listener-class>event_and_listeners.servlet_context_event.LoginContextListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>event_and_listeners.httpSession_event.HSessionListener</listener-class>
+    </listener>
+
+<!--    end of listeners area-->
 
 </web-app>
