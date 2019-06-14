@@ -37,8 +37,9 @@ public class CrudLoginController  extends HttpServlet {
                 }
             }
             if(list.size() == 0){
+                printWriter.println("please login first");
                 RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher("crudIndex");
-                dispatcher.forward(httpServletRequest, httpServletResponse);
+                dispatcher.include(httpServletRequest, httpServletResponse);
             }
         }else{
             printWriter.println("please login first");

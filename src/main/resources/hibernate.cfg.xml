@@ -14,8 +14,8 @@
         <property name="connection.password">Bizhan4460033641</property>
         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
         <property name="hibernate.show_sql">true</property>
-<!--        <mapping resource="member.hbm.xml"/>-->
-        <mapping class="crud.entity.Member"/>
+        <mapping resource="member.hbm.xml"/>
+<!--        <mapping class="crud.entity.Member"/>-->
     </session-factory>
 </hibernate-configuration>
 
