@@ -113,10 +113,55 @@
         <servlet-class>filters.BaseLogin</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>crudIndex</servlet-name>
+        <servlet-class>crud.servlets.CrudLogin</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>crud.servlets.RegistrationPage</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>saveServlet</servlet-name>
+        <servlet-class>crud.servlets.SaveServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>crudLoginCont</servlet-name>
+        <servlet-class>crud.servlets.CrudLoginController</servlet-class>
+    </servlet>
+
+
 <!--    end of servlet area-->
 
 <!--    servlet mapping area-->
 
+
+
+    <servlet-mapping>
+        <servlet-name>crudLoginCont</servlet-name>
+        <url-pattern>/crudLoginCont</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>saveServlet</servlet-name>
+        <url-pattern>/saveServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>crudIndex</servlet-name>
+        <url-pattern>/crudIndex</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>filterIndex</servlet-name>
